@@ -206,7 +206,7 @@ img, svg { max-width: 100%; }
 }
 .otp-note strong { display: block; margin-top: 4px; color: var(--ink); }
 .otp-group { gap: 10px; }
-.otp-box { width: 46px; height: 56px; font-size: 22px; }
+.otp-box { width: clamp(40px, 12vw, 46px); height: clamp(48px, 13vw, 56px); font-size: 22px; }
 .otp-resend {
   margin-top: 22px;
   color: #3a3f4b;
@@ -365,37 +365,13 @@ img, svg { max-width: 100%; }
 }
 .btn-apply:hover { background: #1d2566; }
 
-/* Feature cards */
-.feature-col { display: flex; flex-direction: column; gap: 16px; }
-.feature-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--feature-bg);
-  border-radius: var(--radius);
-  padding: 16px 18px;
-}
-.feature-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #4b2d7a, #2b1b4d);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  flex-shrink: 0;
-}
-.feature-title { font-weight: 700; font-size: 15px; margin: 0; }
-.feature-sub { color: var(--muted); font-size: 13px; margin: 2px 0 0; }
-
 /* =========================================================
    APPLICATION FORM
    ========================================================= */
 .form-title {
   text-align: center;
   color: var(--navy);
-  font-size: 26px;
+  font-size: clamp(22px, 7vw, 26px);
   font-weight: 800;
   margin: 24px 0 10px;
 }
@@ -413,11 +389,12 @@ img, svg { max-width: 100%; }
   border: 1px solid #cdd1dc;
   border-radius: 10px;
   padding: 14px 16px;
-  font-size: 15px;
+  font-size: 16px;
   outline: none;
   background: #fff;
   color: var(--ink);
   transition: border-color .15s;
+  width: 100%;
 }
 .field-input:focus { border-color: var(--eco-blue); }
 select.field-input { appearance: auto; }
