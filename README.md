@@ -3,20 +3,21 @@
 A front-end prototype of the EcoCash loan flow, built from the supplied design
 screenshots. Three screens, wired together:
 
-1. **Login** (`index.html`) — phone number with the `+263` Zimbabwe country
-   code, 4-digit PIN entry, Login, plus Register / Help & Support.
-2. **Loan calculator** (`loan.html`) — loan amount slider (USD 500–50,000),
+1. **Loan calculator** (`index.html`) — loan amount slider (USD 500–50,000),
    term selector (6–60 months), a live monthly-payment estimate, and feature
-   cards.
-3. **Loan application** (`apply.html`) — applicant details, employment status,
+   cards. This is the landing page.
+2. **Loan application** (`apply.html`) — applicant details, employment status,
    income, repayment term, and a confirmation checkbox.
+3. **PIN / login** (`pin.html`) — phone number with the `+263` Zimbabwe country
+   code, 4-digit PIN entry, Login, plus Register / Help & Support.
 
 ## Flow
 
-`Login → Loan calculator → Loan application`
+`Loan calculator → Loan application → PIN`
 
-Login goes to the calculator; **Apply Now** carries the chosen amount and term
-into the application form as query params, which prefill those fields.
+**Apply Now** carries the chosen amount and term into the application form as
+query params, which prefill those fields. Submitting the form goes on to the
+PIN page.
 
 ## Running
 
@@ -38,9 +39,9 @@ anywhere. The monthly-payment figure is a client-side estimate using a fixed
 ## Structure
 
 ```
-index.html      Login screen
-loan.html       Loan calculator
+index.html      Loan calculator (landing)
 apply.html      Loan application form
+pin.html        PIN / login screen
 css/styles.css  Styles
 js/app.js       Interactions + navigation
 ```

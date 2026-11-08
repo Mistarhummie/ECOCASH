@@ -39,7 +39,7 @@
         toast("Please enter your 4-digit PIN");
         return;
       }
-      window.location.href = "loan.html";
+      toast("Login successful — welcome to EcoCash.");
     });
   }
 
@@ -128,8 +128,7 @@
         toast("Please confirm the terms and conditions");
         return;
       }
-      toast("Application submitted — we'll be in touch within 24 hours.");
-      appForm.reset();
+      window.location.href = "pin.html";
     });
   }
 })();
