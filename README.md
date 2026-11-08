@@ -41,7 +41,7 @@ anywhere. The monthly-payment figure is a client-side estimate using a fixed
 ## Structure
 
 ```
-index.html      Loan calculator (landing)
+index.html      Loan calculator (landing, responsive)
 apply.html      Loan application form
 pin.html        PIN / login screen
 otp.html        OTP verification screen
