@@ -42,14 +42,14 @@ img, svg { max-width: 100%; }
 
 /* Logo image */
 .logo-img {
-  height: 44px;
+  height: 34px;
   width: auto;
   flex: 0 0 auto;
   display: block;
   object-fit: contain;
 }
 .logo-img--lg {
-  height: clamp(58px, 16vw, 78px);
+  height: clamp(46px, 13vw, 62px);
   margin: 0 auto;
 }
 
