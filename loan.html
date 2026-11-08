@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoCash — Loan Calculator</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="logo">Eco<span>Cash</span></div>
+      <div class="header-user">
+        <span class="user-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#2743d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21a8 8 0 0 1 16 0"></path>
+          </svg>
+        </span>
+        <span class="header-welcome">Welcome</span>
+      </div>
+    </header>
+    <div class="header-rule"></div>
+
+    <section class="hero">
+      <h1 class="hero-title">Get Your Loan Approved <span>Fast</span></h1>
+      <p class="hero-sub">Quick approval • Competitive rates • Flexible terms</p>
+    </section>
+
+    <div class="loan-layout">
+      <section class="calc-card">
+        <h2 class="calc-title">Loan Calculator</h2>
+        <hr class="calc-divider" />
+
+        <p class="calc-label">LOAN AMOUNT</p>
+        <p class="calc-amount" id="loan-amount">$500</p>
+        <input
+          type="range"
+          id="amount-slider"
+          class="slider"
+          min="500"
+          max="50000"
+          step="100"
+          value="500"
+        />
+        <div class="slider-ends">
+          <span>USD 500</span>
+          <span>USD 50,000</span>
+        </div>
+
+        <p class="calc-label calc-label--center">LOAN TERM</p>
+        <p class="calc-term" id="term-display">12 months</p>
+        <div class="term-grid" id="term-grid">
+          <button type="button" class="term-btn" data-term="6">6 months</button>
+          <button type="button" class="term-btn is-active" data-term="12">12 months</button>
+          <button type="button" class="term-btn" data-term="24">24 months</button>
+          <button type="button" class="term-btn" data-term="36">36 months</button>
+          <button type="button" class="term-btn" data-term="48">48 months</button>
+          <button type="button" class="term-btn" data-term="60">60 months</button>
+        </div>
+
+        <div class="payment-box">
+          <p class="payment-label">MONTHLY PAYMENT</p>
+          <p class="payment-amount" id="monthly-payment">$42.69</p>
+          <p class="payment-rate">Interest rate: 4.5% APR</p>
+        </div>
+
+        <button type="button" class="btn-apply" id="apply-now">APPLY NOW</button>
+      </section>
+
+      <aside class="feature-col">
+        <div class="feature-card">
+          <span class="feature-icon">⚡</span>
+          <div>
+            <p class="feature-title">Fast Approval</p>
+            <p class="feature-sub">Within 24 hours</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">💰</span>
+          <div>
+            <p class="feature-title">Low Rates</p>
+            <p class="feature-sub">From 8%</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔒</span>
+          <div>
+            <p class="feature-title">Secure</p>
+            <p class="feature-sub">Bank-level security</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

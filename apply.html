@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoCash — Loan Application</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="app-body">
+  <div class="app-shell app-shell--form">
+    <header class="app-header">
+      <div class="logo">Eco<span>Cash</span></div>
+      <div class="header-user">
+        <span class="user-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#2743d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21a8 8 0 0 1 16 0"></path>
+          </svg>
+        </span>
+        <span class="header-welcome">Welcome</span>
+      </div>
+    </header>
+    <div class="header-rule"></div>
+
+    <h1 class="form-title">Loan Application</h1>
+    <p class="form-intro">Please fill in all required details accurately. All information is kept confidential and used only for loan processing and verification only.</p>
+
+    <form id="application-form" class="loan-form" novalidate>
+      <label class="field">
+        <span class="field-label">Full name</span>
+        <input type="text" name="fullName" class="field-input" required />
+      </label>
+
+      <label class="field">
+        <span class="field-label">Phone Number</span>
+        <input type="tel" name="phone" class="field-input" inputmode="numeric" required />
+      </label>
+
+      <label class="field">
+        <span class="field-label">National ID</span>
+        <input type="text" name="nationalId" class="field-input" required />
+      </label>
+
+      <label class="field">
+        <span class="field-label">Loan Amount (USD)</span>
+        <input type="number" name="loanAmount" class="field-input" min="500" step="100" required />
+      </label>
+
+      <label class="field">
+        <span class="field-label">Employment Status</span>
+        <select name="employment" class="field-input" required>
+          <option value="Employed">Employed</option>
+          <option value="Self-Employed" selected>Self-Employed</option>
+          <option value="Unemployed">Unemployed</option>
+          <option value="Student">Student</option>
+          <option value="Retired">Retired</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="field-label">Monthly Net Income</span>
+        <input type="number" name="income" class="field-input" placeholder="USD 0.00" min="0" step="0.01" required />
+      </label>
+
+      <label class="field">
+        <span class="field-label">Repayment</span>
+        <select name="repayment" class="field-input" required>
+          <option value="6">6 months</option>
+          <option value="12">12 months</option>
+          <option value="24">24 months</option>
+          <option value="36">36 months</option>
+          <option value="48">48 months</option>
+          <option value="60">60 months</option>
+        </select>
+      </label>
+
+      <label class="confirm-row">
+        <input type="checkbox" name="confirm" id="confirm" required />
+        <span>I confirm that the information provided is true and I agree to the EcoCash Loans terms and conditions.</span>
+      </label>
+
+      <button type="submit" class="btn-submit">SUBMIT APPLICATION</button>
+    </form>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
