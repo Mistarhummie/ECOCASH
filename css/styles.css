@@ -40,6 +40,18 @@ img, svg { max-width: 100%; }
 .logo span { color: var(--eco-red); }
 .logo--lg { font-size: 40px; text-align: center; }
 
+/* Logo image */
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+.logo-img--lg {
+  height: clamp(64px, 18vw, 84px);
+  margin: 0 auto;
+}
+
 /* =========================================================
    LOGIN SCREEN
    ========================================================= */
