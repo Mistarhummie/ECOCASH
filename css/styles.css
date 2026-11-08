@@ -188,6 +188,27 @@ body {
 .version { font-weight: 700; font-size: 14px; margin: 0 0 8px; }
 .terms { font-size: 13px; opacity: .95; margin: 0; }
 
+/* ---------- OTP screen ---------- */
+.otp-note {
+  text-align: center;
+  color: #3a3f4b;
+  font-size: 16px;
+  max-width: 360px;
+  margin: 0 0 28px;
+  line-height: 1.5;
+}
+.otp-note strong { display: block; margin-top: 4px; color: var(--ink); }
+.otp-group { gap: 10px; }
+.otp-box { width: 46px; height: 56px; font-size: 22px; }
+.otp-resend {
+  margin-top: 22px;
+  color: #3a3f4b;
+  font-size: 15px;
+}
+.otp-resend a { color: var(--eco-blue); text-decoration: none; font-weight: 600; }
+.otp-resend a.is-disabled { color: var(--muted-light); pointer-events: none; }
+.otp-bottom { padding-top: 18px; }
+
 /* =========================================================
    APP SHELL (loan + form)
    ========================================================= */

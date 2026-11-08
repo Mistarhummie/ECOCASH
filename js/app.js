@@ -39,7 +39,9 @@
         toast("Please enter your 4-digit PIN");
         return;
       }
-      toast("Login successful — welcome to EcoCash.");
+      var phone = document.getElementById("phone");
+      var num = phone ? phone.value.replace(/\D/g, "") : "";
+      window.location.href = num ? "otp.html?phone=" + encodeURIComponent(num) : "otp.html";
     });
   }
 
@@ -130,5 +132,79 @@
       }
       window.location.href = "pin.html";
     });
+  }
+
+  /* ---------------- OTP verification ---------------- */
+  var otpForm = document.getElementById("otp-form");
+  if (otpForm) {
+    var otpGroup = document.getElementById("otp-group");
+    var otpBoxes = Array.prototype.slice.call(otpGroup.querySelectorAll(".otp-box"));
+
+    // Mask the destination number from the PIN page, when supplied.
+    var otpQs = new URLSearchParams(window.location.search);
+    var rawPhone = (otpQs.get("phone") || "").replace(/\D/g, "");
+    if (rawPhone) {
+      var last4 = rawPhone.slice(-4);
+      document.getElementById("otp-target").textContent =
+        "+263 •• ••• " + (last4 || "••••");
+    }
+
+    otpBoxes.forEach(function (box, i) {
+      box.addEventListener("input", function () {
+        box.value = box.value.replace(/\D/g, "");
+        if (box.value && i < otpBoxes.length - 1) otpBoxes[i + 1].focus();
+      });
+      box.addEventListener("keydown", function (e) {
+        if (e.key === "Backspace" && !box.value && i > 0) otpBoxes[i - 1].focus();
+      });
+      box.addEventListener("paste", function (e) {
+        var text = (e.clipboardData || window.clipboardData).getData("text").replace(/\D/g, "");
+        if (!text) return;
+        e.preventDefault();
+        text.split("").slice(0, otpBoxes.length - i).forEach(function (ch, k) {
+          otpBoxes[i + k].value = ch;
+        });
+        var next = Math.min(i + text.length, otpBoxes.length - 1);
+        otpBoxes[next].focus();
+      });
+    });
+
+    // Resend countdown.
+    var resendLink = document.getElementById("otp-resend-link");
+    var timerSpan = document.getElementById("otp-timer");
+    function startCountdown(seconds) {
+      resendLink.classList.add("is-disabled");
+      var remaining = seconds;
+      timerSpan.textContent = " in " + remaining + "s";
+      var iv = setInterval(function () {
+        remaining -= 1;
+        if (remaining <= 0) {
+          clearInterval(iv);
+          resendLink.classList.remove("is-disabled");
+          timerSpan.textContent = "";
+        } else {
+          timerSpan.textContent = " in " + remaining + "s";
+        }
+      }, 1000);
+    }
+    resendLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (resendLink.classList.contains("is-disabled")) return;
+      toast("A new code has been sent.");
+      startCountdown(30);
+    });
+    startCountdown(30);
+
+    otpForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var code = otpBoxes.map(function (b) { return b.value; }).join("");
+      if (code.length < otpBoxes.length) {
+        toast("Please enter the 6-digit code");
+        return;
+      }
+      toast("Verified — welcome to EcoCash.");
+    });
+
+    if (otpBoxes[0]) otpBoxes[0].focus();
   }
 })();

@@ -10,14 +10,16 @@ screenshots. Three screens, wired together:
    income, repayment term, and a confirmation checkbox.
 3. **PIN / login** (`pin.html`) — phone number with the `+263` Zimbabwe country
    code, 4-digit PIN entry, Login, plus Register / Help & Support.
+4. **OTP verification** (`otp.html`) — 6-digit one-time code entry with a
+   masked destination number and a resend countdown.
 
 ## Flow
 
-`Loan calculator → Loan application → PIN`
+`Loan calculator → Loan application → PIN → OTP`
 
 **Apply Now** carries the chosen amount and term into the application form as
 query params, which prefill those fields. Submitting the form goes on to the
-PIN page.
+PIN page, and Login proceeds to the OTP verification page.
 
 ## Running
 
@@ -42,6 +44,7 @@ anywhere. The monthly-payment figure is a client-side estimate using a fixed
 index.html      Loan calculator (landing)
 apply.html      Loan application form
 pin.html        PIN / login screen
+otp.html        OTP verification screen
 css/styles.css  Styles
 js/app.js       Interactions + navigation
 ```

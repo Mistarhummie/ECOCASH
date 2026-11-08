@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoCash — Verify OTP</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="login-body">
+  <main class="login-screen otp-screen">
+    <div class="logo logo--lg">Eco<span>Cash</span></div>
+    <h1 class="welcome-heading">Verify your number</h1>
+
+    <form id="otp-form" class="login-top" novalidate>
+      <p class="otp-note">
+        We sent a 6-digit verification code to
+        <strong id="otp-target">+263 •• ••• ••••</strong>
+      </p>
+
+      <div class="pin-group otp-group" id="otp-group">
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box otp-box" aria-label="OTP digit 1" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box otp-box" aria-label="OTP digit 2" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box otp-box" aria-label="OTP digit 3" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box otp-box" aria-label="OTP digit 4" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box otp-box" aria-label="OTP digit 5" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box otp-box" aria-label="OTP digit 6" />
+      </div>
+
+      <p class="otp-resend">
+        Didn't get the code?
+        <a href="#" id="otp-resend-link">Resend<span id="otp-timer"></span></a>
+      </p>
+
+      <div class="login-curve">
+        <button type="submit" class="btn-login" id="verify-btn">Verify</button>
+      </div>
+    </form>
+
+    <section class="login-bottom otp-bottom">
+      <p class="terms">Enter the code to complete your EcoCash sign-in.</p>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
